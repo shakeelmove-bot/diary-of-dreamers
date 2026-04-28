@@ -17,7 +17,7 @@
     }
 
     h1 {
-      font-size: 50px;
+      font-size: 48px;
       margin: 0;
     }
 
@@ -34,9 +34,9 @@
 
     .card {
       background: rgba(255,255,255,0.9);
-      padding: 20px;
-      margin: 15px 0;
-      border-radius: 20px;
+      padding: 18px;
+      margin: 12px 0;
+      border-radius: 18px;
       cursor: pointer;
       transition: 0.3s;
     }
@@ -51,7 +51,7 @@
       top: 0; left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.6);
       justify-content: center;
       align-items: center;
     }
@@ -60,7 +60,9 @@
       background: white;
       padding: 25px;
       border-radius: 20px;
-      width: 300px;
+      width: 320px;
+      max-height: 80vh;
+      overflow-y: auto;
       text-align: center;
     }
 
@@ -76,19 +78,19 @@
 
 <div class="container">
 
-  <div class="card" onclick="openPoem('Silent Truth','We know the truth we never said...\nYou look away, but I still feel it.')">
+  <div class="card" onclick="openPoem('Silent Truth','We know the truth we never said...\n\nYou look away like it means nothing,\nbut I still feel you everywhere.\n\nAnd me?\nI act like I don’t care,\nwhile remembering everything.')">
     💗 Silent Truth
   </div>
 
-  <div class="card" onclick="openPoem('Moon Reflection','The Moon shines brightest when it stands alone.')">
+  <div class="card" onclick="openPoem('Moon Reflection','The Moon shines brightest when it stands alone.\n\nBut it was never invisible before the darkness.\n\nSo why do we wait to shine?')">
     🌙 Moon Reflection
   </div>
 
-  <div class="card" onclick="openPoem('Ocean Heart','My thoughts are deep like oceans, quiet but endless.')">
+  <div class="card" onclick="openPoem('Ocean Heart','Every morning feels heavy.\nLike carrying invisible mountains.\n\nMy thoughts are ocean deep,\nand sometimes I forget the shore.')">
     🌊 Ocean Heart
   </div>
 
-  <div class="card" onclick="openPoem('Barbie Dream','Pink skies, soft hearts, and endless imagination.')">
+  <div class="card" onclick="openPoem('Barbie Dream','Pink skies, soft hearts,\nand a world that feels like a dream.\n\nEven broken thoughts can look beautiful here.')">
     🎀 Barbie Dream
   </div>
 
@@ -101,8 +103,11 @@
 <script>
 function openPoem(title, text) {
   document.getElementById("popup").style.display = "flex";
+
   document.getElementById("popupText").innerHTML =
-    "<h2>" + title + "</h2><p style='white-space:pre-line'>" + text + "</p>";
+    "<h2>" + title + "</h2>" +
+    "<pre style='white-space:pre-wrap;font-family:Georgia;text-align:left'>" + text + "</pre>" +
+    "<p style='opacity:0.5'>tap anywhere to close 💗</p>";
 }
 
 function closePoem() {
