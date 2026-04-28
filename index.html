@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diary of a Dreamer</title>
 
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: linear-gradient(135deg,#ffe4ec,#ffd6e7,#ffc1dc);
+      color: #8b3a62;
+    }
+
+    .header {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    h1 { font-size: 50px; }
+
+    .card {
+      background: white;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>🎀 Diary of a Dreamer 🎀</h1>
+</div>
+
+<div class="card" onclick="openPoem('Silent Truth','We know the truth we never said...')">
+  💗 Silent Truth
+</div>
+
+<div class="card" onclick="openPoem('Moon Reflection','The Moon shines even in shadows...')">
+  🌙 Moon Reflection
+</div>
+
+<div class="popup" id="popup" onclick="closePoem()">
+  <div class="popup-content" id="popupText"></div>
+</div>
+
+<script>
+function openPoem(title,text){
+  document.getElementById("popup").style.display="flex";
+  document.getElementById("popupText").innerHTML=
+  "<h2>"+title+"</h2><p>"+text+"</p>";
+}
+
+function closePoem(){
+  document.getElementById("popup").style.display="none";
+}
+</script>
+
+</body>
+</html>
